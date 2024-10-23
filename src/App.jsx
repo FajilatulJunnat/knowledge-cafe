@@ -8,8 +8,16 @@ import Header from './components/header/Header'
 function App() {
 const[bookmarks,setbookmarks]=useState([])
 const hendleBookMark= blog =>{
+  const isExist=bookmarks.find((p)=>p.id==blog.id)
+if (isExist) {
+  alert('Already Exist')
+  
+}else{
+  // console.log('nai');
   const newbookMarks=[...bookmarks,blog]
   setbookmarks(newbookMarks)
+}
+ 
 }
 
 const [readingtime,setreadingtime]=useState(0)
