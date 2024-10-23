@@ -13,10 +13,15 @@ const hendleBookMark= blog =>{
 }
 
 const [readingtime,setreadingtime]=useState(0)
-const hendleMarkAsRead=time=>{
-  console.log('reading time',time)
+const hendleMarkAsRead=(time,id)=>{
+  // console.log('reading time',time)
   let newReadingTime=readingtime+time
   setreadingtime(newReadingTime)
+  // remove bookmark
+  const remainingBookMarks=bookmarks.filter(bookmark=>bookmark.id !==id)
+  setbookmarks(remainingBookMarks)
+  // console.log('remove',id);
+  
 }
 
 
